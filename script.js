@@ -27,19 +27,25 @@ buttons.forEach(function (button) {
         }
 
         // Equals
-        else if (value === "=") {
+       else if (value === "=") {
 
-            try {
+    try {
 
-                display.textContent = eval(display.textContent);
+        const result = eval(display.textContent);
 
-            } catch {
-
-                display.textContent = "Error";
-
-            }
-
+        if (result === Infinity || result === -Infinity || Number.isNaN(result)) {
+            display.textContent = "Error";
+        } else {
+            display.textContent = result;
         }
+
+    } catch {
+
+        display.textContent = "Error";
+
+    }
+
+}
 
         // Numbers and Operators
         else {
