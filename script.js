@@ -15,14 +15,14 @@ buttons.forEach(function (button) {
         // Clear All
         if (value === "C") {
 
-            display.value = "";
+            display.textContent = "";
 
         }
 
         // Backspace
         else if (value === "←") {
 
-            display.value = display.value.slice(0, -1);
+            display.textContent = display.textContent.slice(0, -1);
 
         }
 
@@ -31,11 +31,11 @@ buttons.forEach(function (button) {
 
             try {
 
-                display.value = eval(display.value);
+                display.textContent = eval(display.textContent);
 
             } catch {
 
-                display.value = "Error";
+                display.textContent = "Error";
 
             }
 
@@ -44,7 +44,7 @@ buttons.forEach(function (button) {
         // Numbers and Operators
         else {
 
-            display.value += value;
+            display.textContent += value;
 
         }
 
